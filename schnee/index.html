@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Snow effect</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="schnee.css">
+
+    <style>
+    .giant {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 288px;
+        font-weight: bold;
+    }
+    </style>
+      
+</head>
+<body>
+
+<div style="background-color: blue; min-height: 150px; min-width: 200px;">
+</div>
+<div style="background-color: red; min-height: 150px; min-width: 200px;
+
+background-image:url('./schnee1.png'),
+url('./schnee2.png'),
+url('./schnee3.png');
+-webkit-animation:schnee 35s linear infinite;
+-moz-animation:schnee 35s linear infinite;
+-ms-animation:schnee 35s linear infinite;
+animation:schnee 35s linear infinite;
+!important
+">
+
+<pre>
+	public ..Session(Request request) {
+		super(request);
+		
+		Calendar cal = Calendar.getInstance();
+		if (cal.get(Calendar.MONTH) == Calendar.APRIL && cal.get(Calendar.DAY_OF_MONTH) == 1) {
+			theme = THEME_COMICSANS;
+		} else if (cal.get(Calendar.MONTH) == Calendar.DECEMBER) {
+			theme = THEME_SNOWFLAKE;
+		}
+	}
+
+	public TemplatePage(PageParameters params) {
+		super(params);
+		
+		StringValue theme = params.get("theme");
+		if (theme != null && theme.toString() != null) {
+			getSession().setTheme(theme.toString());
+		}
+
+
+		add(new Label("themeComicSans", getSession().isThemeComicSans() ? "body { font-family: Comic Sans MS; }" : ""));
+
+		
+		headernav = new WebMarkupContainer ("headernav");
+		add(headernav);
+		
+		if (getSession().isThemeSnowflake()) {
+			headernav.add(new AttributeAppender("style", "background-image:url('../../schnee1.png'),\n" + 
+					"url('../../schnee2.png'),\n" + 
+					"url('../../schnee3.png');\n" + 
+					"-webkit-animation:schnee 35s linear infinite;\n" + 
+					"-moz-animation:schnee 35s linear infinite;\n" + 
+					"-ms-animation:schnee 35s linear infinite;\n" + 
+					"animation:schnee 35s linear infinite;\n" + 
+					"!important\n" 
+					));
+		}
+
+TemplatePage.html
+		
+		&lt;head>
+			..
+			&lt;link href="schnee.css" rel="stylesheet" />
+			&lt;style wicket:id="themeComicSans">
+			&lt;/style>
+		&lt;/head>
+		&lt;body>
+			&lt;nav wicket:id="headernav" class="navbar navbar-inverse navbar-fixed-top">
+				&lt;div class="container-fluid">
+					&lt;div class="navbar-header">
+
+</pre>
+</div>
+<div style="background-color: blue; min-height: 150px; min-width: 200px;">
+</div>
+
+</body>
+</html>
